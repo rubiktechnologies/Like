@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'mixins';
+
+/*--------------------------------------------------
+Footer
+--------------------------------------------------*/
+
+//footer
+footer {
+    background: $dark-grey;
+    padding: 25px 0;
+    overflow: hidden;
+    display: block;
+
+    .row {
+        align-items: center;
+    }
+    ul {
+        overflow: hidden;
+
+        li {
+            float: left;
+            margin-right: 20px;
+            display: inline-block;
+
+            a {
+                font-size: 20px;
+                color: $text-grey;
+
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    p {
+        font: 700 14px/1 $main-font;
+        color: $text-grey;
+        text-align: right;
+        margin: 0;
+
+        a {
+            color: $text-grey;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 991px) {
+    footer {
+        text-align: center;
+
+        ul {
+            li {
+                float: none;
+            }
+        }
+        p {
+            margin-top: 15px;
+            text-align: inherit;
+        }
+    }
+}

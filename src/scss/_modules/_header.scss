@@ -1,0 +1,97 @@
+@import 'variables';
+@import 'mixins';
+
+/*--------------------------------------------------
+Header
+--------------------------------------------------*/
+
+//header
+header {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    padding: 40px 0;
+    transition: all 0.3s ease;
+
+    &.sticky-header {
+        position: fixed;
+        padding: 15px 0;
+        background: $dark-grey;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu {
+        li {
+            float: left;
+            margin-left: 60px;
+
+            a {
+                display: block;
+                font: 500 14px $main-font;
+                color: $white;
+                text-transform: uppercase;
+
+                &.active, &:hover {
+                    color: $blue;
+                }
+                &.active {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .mobile-menu {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 991px) {
+    header {
+        .menu {
+            position: fixed;
+            left: -250px;
+            background: #000;
+            top: 0;
+            width: 250px;
+            padding: 25px;
+            bottom: 0;
+            z-index: 999;
+            transition: all 0.3s ease;
+
+            &.slide-menu {
+                left: 0;
+            }
+            li {
+                margin: 0 0 20px;
+                width: 100%;
+
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+        .mobile-menu {
+            display: block;
+            color: $white;
+            font-size: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header {
+        padding: 15px 0;
+    }
+}

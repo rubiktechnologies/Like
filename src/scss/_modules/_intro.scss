@@ -1,0 +1,53 @@
+@import 'variables';
+@import 'mixins';
+//--------------------------------------------------
+//Intro
+//-------------------------------------------------
+.intro-page {
+    padding: 200px 0 140px;
+    background-image: url($img-dir + "slider.jpg");
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    position: relative;
+
+    &:before {
+        content: "";
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            font: 600 72px/1 $main-font;
+            text-transform: uppercase;
+            margin: 0 0 20px;
+        }
+        p {
+            font: 400 24px/1 $second-font;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 575px) {
+    .intro-page {
+        .container {
+            h1 {
+                font-size: 55px;
+                word-break: break-word;
+            }
+            p {
+                font-size: 22px;
+            }
+        }
+    }
+}
